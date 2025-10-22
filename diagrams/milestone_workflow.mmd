@@ -1,0 +1,40 @@
+sequenceDiagram
+    participant I as Initiator
+    participant BC as Blockchain
+    participant V as Validators
+    participant C as Challenger
+    participant COM as Community
+    
+    I->>BC: Submit Milestone<br/>(Summary + Data Hash)
+    BC->>BC: Store On-Chain Record
+    I->>BC: Upload Full Data to IPFS
+    BC-->>V: Milestone Enters<br/>Validation Period
+    
+    Note over V: Validation Phase
+    V->>BC: Stake Tokens<br/>on Milestone
+    V->>BC: Review Data
+    
+    alt No Challenge
+        BC->>BC: Validation Complete
+        BC->>V: Distribute Rewards
+        BC->>I: Milestone Approved
+    else Challenge Raised
+        C->>BC: Initiate Challenge<br/>(Stake Required)
+        BC-->>I: Challenge Notification
+        I->>BC: Submit Defense<br/>(Evidence)
+        BC-->>COM: Community Vote
+        COM->>BC: Cast Votes<br/>(Token-Weighted)
+        
+        alt Challenge Successful
+            BC->>C: Reward Challenger
+            BC->>I: Penalize Initiator<br/>(Lose Stake)
+            BC->>BC: Reject Milestone
+            BC->>I: Reduce Reputation Score
+        else Challenge Failed
+            BC->>I: Reward Initiator
+            BC->>C: Small Consolation<br/>Prize
+            BC->>BC: Approve Milestone
+            BC->>C: Reduce Tokens<br/>(Diminishing Returns)
+        end
+    end
+

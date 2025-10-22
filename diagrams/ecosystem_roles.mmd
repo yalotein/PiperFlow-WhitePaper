@@ -1,0 +1,57 @@
+graph LR
+    subgraph "Platform Ecosystem"
+        ML[Milestone Ledger<br/>Solana Blockchain]
+    end
+    
+    subgraph "Participant Roles"
+        INIT[Initiators<br/>Research Teams]
+        CONT[Contributors<br/>Domain Experts]
+        VAL[Validators<br/>Token Stakers]
+        CHAL[Challengers<br/>Data Auditors]
+        OBS[Observers<br/>Regulators/Investors]
+    end
+    
+    subgraph "Platform Layers"
+        INC[Incentive Layer<br/>Token Rewards]
+        GOV[Governance Layer<br/>DAO Voting]
+        MARK[Marketplace<br/>Task Bidding]
+    end
+    
+    INIT -->|Submit Milestones| ML
+    INIT -->|Post Tasks| MARK
+    INIT -->|Propose Token Values| MARK
+    
+    CONT -->|Review Data| ML
+    CONT -->|Complete Tasks| MARK
+    CONT -->|Earn Tokens| INC
+    
+    VAL -->|Stake Tokens| ML
+    VAL -->|Validate Milestones| ML
+    VAL -->|Earn Rewards| INC
+    
+    CHAL -->|Challenge Data| ML
+    CHAL -->|Stake Tokens| ML
+    CHAL -->|Earn Rewards| INC
+    
+    OBS -->|View Records| ML
+    OBS -->|Monitor Progress| ML
+    OBS -->|Access Audit Trail| ML
+    
+    ML -->|Distribute Rewards| INC
+    ML -->|Record Votes| GOV
+    
+    INC -->|Token Flow| MARK
+    GOV -->|Protocol Updates| ML
+    
+    MARK -->|Task Completion| INC
+    
+    style ML fill:#4caf50,color:#fff
+    style INIT fill:#2196f3,color:#fff
+    style CONT fill:#2196f3,color:#fff
+    style VAL fill:#2196f3,color:#fff
+    style CHAL fill:#2196f3,color:#fff
+    style OBS fill:#2196f3,color:#fff
+    style INC fill:#ff9800,color:#fff
+    style GOV fill:#9c27b0,color:#fff
+    style MARK fill:#00bcd4,color:#fff
+

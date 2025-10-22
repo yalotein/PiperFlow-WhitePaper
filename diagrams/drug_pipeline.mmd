@@ -1,0 +1,73 @@
+graph LR
+    subgraph "Drug Discovery Pipeline with Milestone Recording"
+        T[Target<br/>Identification]
+        V[Target<br/>Validation]
+        S[Screening<br/>Campaign]
+        L[Lead<br/>Selection]
+        O[Lead<br/>Optimization]
+        P[Preclinical<br/>Studies]
+        E[Efficacy<br/>Testing]
+        X[Toxicology<br/>Assessment]
+    end
+    
+    subgraph "Blockchain Recording"
+        M1[Milestone 1<br/>On-Chain]
+        M2[Milestone 2<br/>On-Chain]
+        M3[Milestone 3<br/>On-Chain]
+        M4[Milestone 4<br/>On-Chain]
+        M5[Milestone 5<br/>On-Chain]
+        M6[Milestone 6<br/>On-Chain]
+    end
+    
+    subgraph "Off-Chain Data"
+        D1[(Raw Data<br/>IPFS)]
+        D2[(Raw Data<br/>IPFS)]
+        D3[(Raw Data<br/>IPFS)]
+        D4[(Raw Data<br/>IPFS)]
+        D5[(Raw Data<br/>IPFS)]
+        D6[(Raw Data<br/>IPFS)]
+    end
+    
+    T --> V
+    V --> S
+    S --> L
+    L --> O
+    O --> P
+    P --> E
+    E --> X
+    
+    V -.Record.-> M1
+    S -.Record.-> M2
+    L -.Record.-> M3
+    O -.Record.-> M4
+    E -.Record.-> M5
+    X -.Record.-> M6
+    
+    M1 -.Hash Link.-> D1
+    M2 -.Hash Link.-> D2
+    M3 -.Hash Link.-> D3
+    M4 -.Hash Link.-> D4
+    M5 -.Hash Link.-> D5
+    M6 -.Hash Link.-> D6
+    
+    style T fill:#e3f2fd
+    style V fill:#e3f2fd
+    style S fill:#e3f2fd
+    style L fill:#e3f2fd
+    style O fill:#e3f2fd
+    style P fill:#e3f2fd
+    style E fill:#e3f2fd
+    style X fill:#e3f2fd
+    style M1 fill:#c8e6c9
+    style M2 fill:#c8e6c9
+    style M3 fill:#c8e6c9
+    style M4 fill:#c8e6c9
+    style M5 fill:#c8e6c9
+    style M6 fill:#c8e6c9
+    style D1 fill:#fff9c4
+    style D2 fill:#fff9c4
+    style D3 fill:#fff9c4
+    style D4 fill:#fff9c4
+    style D5 fill:#fff9c4
+    style D6 fill:#fff9c4
+

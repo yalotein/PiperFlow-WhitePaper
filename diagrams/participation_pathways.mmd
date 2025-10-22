@@ -1,0 +1,65 @@
+graph TB
+    subgraph "Case 1: Early-Stage Company"
+        E1[Idea/Hypothesis<br/>Target Identification]
+        E2[Create Project<br/>Milestone 0]
+        E3[Post Bounties<br/>for Validation]
+        E4[Community<br/>Contributes]
+        E5[Record Progressive<br/>Milestones 1-N]
+        E6[Build Credibility<br/>& Attract Funding]
+        
+        E1 --> E2
+        E2 --> E3
+        E3 --> E4
+        E4 --> E5
+        E5 --> E6
+    end
+    
+    subgraph "Case 2: Advanced-Stage Company"
+        A1[PCC Molecule +<br/>Historical Records]
+        A2[Batch Upload<br/>Milestones 1-N]
+        A3[Post Validation<br/>Bounties]
+        A4[Community<br/>Validates History]
+        A5[Continue Recording<br/>New Milestones N+1...]
+        A6[Regulatory Submission<br/>& Partnership]
+        
+        A1 --> A2
+        A2 --> A3
+        A3 --> A4
+        A4 --> A5
+        A5 --> A6
+    end
+    
+    subgraph "Platform Core"
+        BC[Blockchain<br/>Milestone Ledger]
+        MARK[Community<br/>Marketplace]
+        VAL[Validation<br/>System]
+    end
+    
+    E2 --> BC
+    E3 --> MARK
+    E4 --> VAL
+    E5 --> BC
+    
+    A2 --> BC
+    A3 --> MARK
+    A4 --> VAL
+    A5 --> BC
+    
+    style E1 fill:#e3f2fd
+    style E2 fill:#90caf9
+    style E3 fill:#90caf9
+    style E4 fill:#64b5f6
+    style E5 fill:#42a5f5
+    style E6 fill:#2196f3,color:#fff
+    
+    style A1 fill:#fff3e0
+    style A2 fill:#ffcc80
+    style A3 fill:#ffcc80
+    style A4 fill:#ffb74d
+    style A5 fill:#ffa726
+    style A6 fill:#ff9800,color:#fff
+    
+    style BC fill:#4caf50,color:#fff
+    style MARK fill:#00bcd4,color:#fff
+    style VAL fill:#9c27b0,color:#fff
+

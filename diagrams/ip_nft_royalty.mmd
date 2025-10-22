@@ -1,0 +1,82 @@
+graph TB
+    subgraph "Project Initiation"
+        COMP[Biotech Company<br/>Creates Project]
+        MINT[Mint IP-NFT<br/>e.g., 15% of revenues<br/>1M shares]
+    end
+    
+    subgraph "Community Contributions"
+        VAL[Validators<br/>Stake on Milestones]
+        CONT[Contributors<br/>Complete Tasks]
+        EXP[Expert Advisors<br/>Provide Insights]
+    end
+    
+    subgraph "IP-NFT Distribution"
+        DIST[Smart Contract<br/>Distributes Shares]
+        VALSHARE[Validators<br/>200K shares]
+        CONTSHARE[Contributors<br/>300K shares]
+        EXPSHARE[Experts<br/>100K shares]
+        RESERVE[Reserved<br/>400K shares]
+    end
+    
+    subgraph "Revenue Events"
+        LIC[Licensing Deal<br/>$50M upfront]
+        MILE[Milestone Payments<br/>$200M over time]
+        ROY[Sales Royalties<br/>$25M/year]
+        ACQ[Acquisition<br/>Exit Event]
+    end
+    
+    subgraph "Royalty Distribution"
+        SC[Smart Contract<br/>15% to Community]
+        AUTO[Automatic Distribution<br/>Proportional to Shares]
+    end
+    
+    subgraph "Stakeholder Returns"
+        VALRET[Validators Earn<br/>$2.5M + ongoing]
+        CONTRET[Contributors Earn<br/>$3.75M + ongoing]
+        EXPRET[Experts Earn<br/>$1.25M + ongoing]
+    end
+    
+    subgraph "Secondary Market"
+        TRADE[IP-NFT Trading<br/>Liquidity]
+        PRICE[Price Discovery<br/>Market Valuation]
+    end
+    
+    COMP --> MINT
+    MINT --> DIST
+    
+    VAL --> DIST
+    CONT --> DIST
+    EXP --> DIST
+    
+    DIST --> VALSHARE
+    DIST --> CONTSHARE
+    DIST --> EXPSHARE
+    DIST --> RESERVE
+    
+    LIC --> SC
+    MILE --> SC
+    ROY --> SC
+    ACQ --> SC
+    
+    SC --> AUTO
+    
+    AUTO --> VALRET
+    AUTO --> CONTRET
+    AUTO --> EXPRET
+    
+    VALSHARE -.Can Trade.-> TRADE
+    CONTSHARE -.Can Trade.-> TRADE
+    EXPSHARE -.Can Trade.-> TRADE
+    
+    TRADE --> PRICE
+    
+    style COMP fill:#2196f3,color:#fff
+    style MINT fill:#4caf50,color:#fff
+    style DIST fill:#ff9800,color:#fff
+    style SC fill:#9c27b0,color:#fff
+    style AUTO fill:#e91e63,color:#fff
+    style VALRET fill:#4caf50,color:#fff
+    style CONTRET fill:#4caf50,color:#fff
+    style EXPRET fill:#4caf50,color:#fff
+    style TRADE fill:#00bcd4,color:#fff
+

@@ -1,0 +1,46 @@
+stateDiagram-v2
+    [*] --> Submitted: Initiator Submits<br/>Milestone
+    
+    Submitted --> ValidationPeriod: Enter Validation
+    
+    ValidationPeriod --> Staking: Validators Review
+    Staking --> ValidationPeriod: More Validators
+    
+    ValidationPeriod --> Approved: No Challenge<br/>Period Expires
+    ValidationPeriod --> Challenged: Challenger<br/>Stakes & Disputes
+    
+    Challenged --> Defense: Initiator Defends<br/>(Provides Evidence)
+    Defense --> CommunityVote: Vote Opens
+    
+    CommunityVote --> ChallengeSuccess: Majority Votes<br/>For Challenger
+    CommunityVote --> ChallengeFailed: Majority Votes<br/>For Initiator
+    
+    ChallengeSuccess --> Rejected: Milestone Rejected
+    ChallengeFailed --> Approved: Milestone Approved
+    
+    Rejected --> [*]: Initiator Loses Stake<br/>Challenger Rewarded<br/>Reputation Decreased
+    
+    Approved --> [*]: Validators Rewarded<br/>Milestone Recorded<br/>Reputation Increased
+    
+    note right of Challenged
+        Challenger must stake
+        tokens to initiate
+    end note
+    
+    note right of CommunityVote
+        Token-weighted voting
+        Reputation influences
+        vote weight
+    end note
+    
+    note right of ChallengeSuccess
+        Staked tokens redistributed
+        Fraudulent data removed
+    end note
+    
+    note right of ChallengeFailed
+        Consolation prize given
+        Diminishing returns apply
+        for repeated challenges
+    end note
+

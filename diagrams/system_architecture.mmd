@@ -1,0 +1,70 @@
+graph TB
+    subgraph "User Layer"
+        UI[Web Application Interface]
+        Wallet[Solana Wallets<br/>Phantom, Metamask]
+    end
+    
+    subgraph "Application Layer"
+        Dashboard[Project Dashboard]
+        Marketplace[Task Marketplace]
+        Explorer[Milestone Explorer]
+        Review[Data Review Tools]
+    end
+    
+    subgraph "Smart Contract Layer - Solana Blockchain"
+        Registry[Milestone Registry<br/>Contract]
+        RoleManager[Role Management<br/>Contract]
+        TokenManager[Token Management<br/>Contract]
+        Dispute[Dispute Resolution<br/>Contract]
+    end
+    
+    subgraph "Data Storage Layer"
+        OnChain[(On-Chain Storage<br/>Solana)]
+        OffChain[(Off-Chain Storage<br/>IPFS/Arweave)]
+        Hash[Cryptographic<br/>Hash Links]
+    end
+    
+    subgraph "Governance Layer"
+        DAO[LAB DAO]
+        Proposals[Community Proposals]
+        Voting[Token-Weighted Voting]
+    end
+    
+    UI --> Dashboard
+    UI --> Marketplace
+    UI --> Explorer
+    UI --> Review
+    UI --> Wallet
+    
+    Dashboard --> Registry
+    Marketplace --> TokenManager
+    Explorer --> Registry
+    Review --> OffChain
+    
+    Wallet --> Registry
+    Wallet --> TokenManager
+    Wallet --> Dispute
+    
+    Registry --> OnChain
+    Registry --> Hash
+    Hash --> OffChain
+    
+    RoleManager --> OnChain
+    TokenManager --> OnChain
+    Dispute --> OnChain
+    
+    DAO --> Proposals
+    Proposals --> Voting
+    Voting --> Registry
+    Voting --> TokenManager
+    
+    style UI fill:#e1f5ff
+    style Wallet fill:#e1f5ff
+    style Registry fill:#c8e6c9
+    style RoleManager fill:#c8e6c9
+    style TokenManager fill:#c8e6c9
+    style Dispute fill:#c8e6c9
+    style OnChain fill:#fff9c4
+    style OffChain fill:#fff9c4
+    style DAO fill:#f8bbd0
+

@@ -1,0 +1,57 @@
+graph TD
+    subgraph "Token Distribution"
+        TOTAL[Total Supply<br/>LAB Token]
+        COMM[Community Fund<br/>40%]
+        TEAM[Core Team<br/>20%]
+        INV[Investors<br/>20%]
+        TREAS[Challenge Treasury<br/>15%]
+        PUBLIC[Public Sale<br/>5%]
+    end
+    
+    subgraph "Token Utility"
+        STAKE[Staking<br/>Validation & Challenges]
+        PAY[Payments<br/>Task Bounties]
+        GOV[Governance<br/>DAO Voting]
+        REWARD[Rewards<br/>Contributions]
+    end
+    
+    subgraph "Token Flow Cycle"
+        INIT[Initiators<br/>Post Tasks]
+        CONTRIB[Contributors<br/>Complete Work]
+        VALID[Validators<br/>Stake & Validate]
+        MARKET[Marketplace<br/>Task Exchange]
+    end
+    
+    TOTAL --> COMM
+    TOTAL --> TEAM
+    TOTAL --> INV
+    TOTAL --> TREAS
+    TOTAL --> PUBLIC
+    
+    COMM --> REWARD
+    TREAS --> STAKE
+    
+    REWARD --> CONTRIB
+    REWARD --> VALID
+    
+    INIT -->|Pay LAB| MARKET
+    MARKET -->|Earn LAB| CONTRIB
+    CONTRIB -->|Stake LAB| STAKE
+    VALID -->|Stake LAB| STAKE
+    STAKE -->|Return + Reward| VALID
+    
+    INIT -->|Hold LAB| GOV
+    CONTRIB -->|Hold LAB| GOV
+    VALID -->|Hold LAB| GOV
+    
+    GOV -->|Vote on| PROTOCOL[Protocol Decisions]
+    
+    style TOTAL fill:#ffd700,color:#000
+    style COMM fill:#4caf50,color:#fff
+    style TREAS fill:#ff9800,color:#fff
+    style STAKE fill:#2196f3,color:#fff
+    style PAY fill:#2196f3,color:#fff
+    style GOV fill:#9c27b0,color:#fff
+    style REWARD fill:#e91e63,color:#fff
+    style MARKET fill:#00bcd4,color:#fff
+

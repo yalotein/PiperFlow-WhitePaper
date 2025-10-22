@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this white paper in your research, please cite it as below."
+authors:
+  - name: "Shanghai Sai-Long Biotechnology Co., Ltd."
+title: "PiperFlow: Blockchain-Based Drug Discovery Milestone Recording and Validation Platform - Technical White Paper"
+version: 1.0
+date-released: 2025-10-22
+url: "https://github.com/yalotein/PiperFlow-WhitePaper"
+repository-code: "https://github.com/yalotein/PiperFlow-WhitePaper"
+license: CC-BY-NC-ND-4.0
+keywords:
+  - PiperFlow
+  - blockchain
+  - drug discovery
+  - DeSci
+  - Solana
+  - milestone tracking
+  - IP-NFT
+  - decentralized science
+  - pharmaceutical research
+  - drug development pipeline
+  - tokenomics
+  - community validation
+abstract: "PiperFlow is a decentralized blockchain-based platform for transparent, immutable milestone recording and community validation in drug discovery. The platform features IP-NFT royalty sharing mechanisms on the Solana blockchain, enabling biotech companies to share future revenues with community contributors while maintaining complete audit trails for regulatory compliance."
+
