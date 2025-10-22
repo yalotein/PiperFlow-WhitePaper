@@ -132,7 +132,7 @@ We're looking for:
 - **Developers** - Blockchain and full-stack engineers
 - **Advisors** - Regulatory, legal, and industry experts
 
-**Contact:** contact@sai-long.com
+**Contact:**frankji@yalotein.com
 
 ## Why "PiperFlow"?
 
@@ -163,7 +163,7 @@ Commercial licenses are available for:
 - Integration into commercial products
 - White-label implementations
 
-Contact contact@sai-long.com for commercial licensing terms.
+Contactfrankji@yalotein.com for commercial licensing terms.
 
 ## Citation
 
